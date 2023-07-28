@@ -37,7 +37,21 @@
       </section>
       
   
-      <script src="main.js"></script>
+      <script type="text/javascript">
+        let myobj = {
+          name : "domenic",
+          age : 56
+      };
+      let myobj_serialized = JSON.stringify(myobj);
+      
+
+      localStorage.setItem("myobj", myobj_serialized);
+      
+      let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"));
+
+      console.log(myobj_deserialized);
+
+      </script>
     
 </body>
 </html>
