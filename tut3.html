@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Wwbsite</title>
+</head>
+<body>
+    <form>
+        <div>
+            <lable for ="fname">first name</lable>
+            <input type="text" id="fname" name="fname" placeholder="spongebob">
+        </div>
+
+         <br>
+
+        <div>
+            <lable for ="fname">last name</lable>
+            <input type="text" id="lname" name="lname" placeholder="squarepants">
+        </div>
+
+        <br>
+
+        <div>
+            <lable for ="pnumber">Phone number</lable>
+            <input type="text" id="pnumber" name="pnumber" placeholder="1234">
+        
+        </div>
+        <div>
+            <input type="reset">
+        </div>
+
+        <br>
+
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+     <script type="text/javascript">
+        let myobj = {
+          name : "domenic",
+          age : 56
+      };
+      let myobj_serialized = JSON.stringify(myobj);
+
+
+      localStorage.setItem("myobj", myobj_serialized);
+
+      let myobj_deserialized = JSON.parse(localStorage.getItem("myobj"));
+
+      console.log(myobj_deserialized);
+
+      </script>
+  
+    </script>
+
+    </script>
+    
+</body>
+</html>
