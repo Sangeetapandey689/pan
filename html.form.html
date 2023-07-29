@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="Stylesheet" href ="style.css">
+    <style>
+         form{
+            background-color: orange;
+            text-align: center;
+
+        }
+        input{
+            font-size: 30px;
+            color: green;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;color:orange;">Book a call</h2>
+    <h5 style="text-align:center">Book a call slot anad our representative will call you</h5>
+    <hr width=" 100%" size="4px">
+    <form action = "#" onsubmit="registerUser(event)">  <br> <br>
+        <label for ="name" class="form-label">Name:</label> <br> <br>
+        <input type="Name"  id ="username" value="" >  <br> <br>
+        <label for ="Email" class="form-label">Email:</label> <br> <br>
+         <input type="email"  id "mail" required> <br> <br>
+        <label for ="Phone" class="form-label">Phone:</label> <br> <br>
+        <input type="text"> <br> <br>
+        <label for ="Time for call:" class="form-label">Time for call:</label> <br> <br>
+        <input type="date"> <input type = "time" <br> <br>
+      
+        <input type = "submit" value = "Get a call" style="color:rgba(47, 5, 233, 0.488) ;> 
+     </form>
+     <Script>
+    function registerUser(event){
+        event.preventDefault();
+        console.log(event.target.username.value)
+    }
+</Script>
