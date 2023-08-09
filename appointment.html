@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListOfUser</title>
+</style>
+</head>
+<body>
+   <form  onsubmit="saveToLocalStorage(event)">
+    <label>Name</label>
+    <input id="username" type="text" name="username" required/>
+    <Label>EmailId</Label>
+    <input id="email" type="email" name="emailId" required/>
+    <label>Phone Number</label>
+    <input id="Phonenumber" type="tel" name="Phonenumber" required/>
+    <button>Submit</button>
+   </form>
+   <ul id="ListOfUser"></ul>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+   <script>
+   function saveToLocalStorage(event){
+    event.prevantDefault();
+    const name = event.target.username.value;
+    const email = event .target.emailId.value;
+    const Phonenumber = event.target.Phonenumber.value;
+    // localStroage.setItem('name', name);
+    // localStroage.setItem('email', email);
+    // localStroage.setItem('Phonenumber', Phonenumber);
+    const obj = {
+        name, 
+        email,
+        Phonenumber
+    }
+    axios.post("https://crudcrud.com/api/7c2c0d22fc0b4d7dad2daa5db587b99e/appointmentData",obj)
+    .then ((response) => {
+        showNewUserOnScreen(response.data)
+        console.log(response)
+    })
+    .catch((error) => {
+        console.log(err)
+    })
+    // localStorage.setItem(obj.email, JSON.stringify(obj))
+    // showNewUserOnScreen(obj)
+   }
+   window.addEventListener("DOMContentLoaded", () =>{
+    const localStorageObj = localStorage;
+    const localStoragekeys = Object.keys(localStorageObj);
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const userDetailsString = localStorageObj[key];
+        const userDetailsObj = JSON.parse(userDetailsString);
+        showNewUserOnScreen(userDetailsObj)
+    }
+   });
+
+   </script>
+    
+</head>
+</body>
+</html>
